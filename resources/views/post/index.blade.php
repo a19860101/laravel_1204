@@ -6,8 +6,6 @@ QWERTY
 
 @section('main')
     <h1>文章列表</h1>
-    {{-- <a href="/post/create">新增文章</a> --}}
-    <a href="{{route('post.create')}}">新增文章</a>
     @foreach($posts as $post)
     <div>
         {{$post->title}}
