@@ -57,4 +57,9 @@ class PostController extends Controller
 
         return redirect('post');
     }
+    function destroy($id){
+        // DB::delete('DELETE FROM posts WHERE id = ?',[$id]);
+        DB::table('posts')->where('id',$id)->delete();
+        return redirect('post');
+    }
 }

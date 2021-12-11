@@ -14,6 +14,11 @@
     </div>
     <a href="/post">文章列表</a>
     <a href="/post/{{$post->id}}/edit">編輯文章</a>
+    <form action="/post/{{$post->id}}" method="post">
+        @csrf
+        @method('delete')
+        <input type="submit" value="刪除">
+    </form>
     {{-- @endforeach --}}
 </body>
 </html>
