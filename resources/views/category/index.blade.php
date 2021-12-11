@@ -33,7 +33,13 @@
                     <input type="submit" class="btn btn-primary" value="新增分類">
                 </form>
             </div>
-            <div class="col-4"></div>
+            <div class="col-4">
+                <ul class="list-group">
+                    @foreach($categories as $category)
+                    <li class="list-group-item">{{$category->title}}</li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
     </div>
 @endsection
