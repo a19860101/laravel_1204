@@ -43,11 +43,18 @@ class PostController extends Controller
         return view('post.edit',compact('post'));
     }
     function update(Request $request, $id){
-        DB::update('UPDATE posts SET title=?,content=?,updated_at=? WHERE id = ?' ,[
-            $request->title,
-            $request->content,
-            now(),
-            $id
+        // DB::update('UPDATE posts SET title=?,content=?,updated_at=? WHERE id = ?' ,[
+        //     $request->title,
+        //     $request->content,
+        //     now(),
+        //     $id
+        // ]);
+        DB::table('posts')->where('id',$id)->update([
+            'title'     => $request->title,
+            'content'   => $request->content,
+            'updated_at'=>now()
         ]);
+
+        return redirect('post');
     }
 }
