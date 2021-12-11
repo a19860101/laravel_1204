@@ -5,5 +5,25 @@
 @endsection
 
 @section('main')
-    <h1>分類管理</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>分類管理</h2>
+            </div>
+            <div class="col-8">
+                <form action="" method="post">
+                    <div class="mb-3">
+                        <label for="" class="form-label">分類標題</label>
+                        <input type="text" class="form-control" name="title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">分類英文標題</label>
+                        <input type="text" class="form-control" name="slug">
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="新增分類">
+                </form>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
 @endsection
