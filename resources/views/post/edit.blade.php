@@ -7,11 +7,11 @@
 @section('main')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-7">
+            <div class="mx-auto col-xl-8 col-sm-10">
                 <h2>編輯文章</h2>
                 <hr>
             </div>
-            <div class="col-7">
+            <div class="mx-auto col-xl-8 col-sm-10">
                 <form action="{{route('post.update',['id'=>$post->id])}}" method="post">
                     @csrf
                     @method('put')
@@ -24,6 +24,8 @@
                         <textarea name="content" id="" cols="30" rows="10" class="form-control">{{$post->content}}</textarea>
                     </div>
                     <input type="submit" class="btn btn-primary" value="儲存文章">
+                    <input type="button" class="btn btn-danger" value="取消" onclick="history.back()">
+
                 </form>
             </div>
         </div>
