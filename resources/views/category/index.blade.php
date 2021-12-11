@@ -11,7 +11,8 @@
                 <h2>分類管理</h2>
             </div>
             <div class="col-8">
-                <form action="" method="post">
+                <form action="{{route('category.store')}}" method="post">
+                    @csrf
                     <div class="mb-3">
                         <label for="" class="form-label">分類標題</label>
                         <input type="text" class="form-control" name="title">
