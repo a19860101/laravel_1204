@@ -8,6 +8,15 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                @if($errors -> any())
+                    @foreach ($errors->all() as $e)
+                    <div class="alert alert-danger" role="alert">
+                        {{$e}}
+                    </div>
+                    @endforeach
+                @endif
+            </div>
+            <div class="col-12">
                 <h2>分類管理</h2>
             </div>
             <div class="col-8">

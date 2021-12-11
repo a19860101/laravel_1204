@@ -36,11 +36,31 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'title' => 'required',
+            'slug'  => 'required',
+        ]);
+        // 方法一
+        // $category = new Category;
+        // $category->title = $request->title;
+        // $category->slug = $request->slug;
+        // $category->save();
+
+        // 方法二
+        // $category = new Category;
+        // $category->fill($request->all());
+        // $category->save();
+
+        //方法三
         $category = new Category;
-        $category->title = $request->title;
-        $category->slug = $request->slug;
+        $category->fill([
+            'title' => $request->title,
+            'slug'  => $request->slug
+        ]);
         $category->save();
+
+        return redirect()->route('category.index');
 
     }
 
