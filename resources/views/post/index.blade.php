@@ -18,7 +18,7 @@ QWERTY
                         建立時間:{{$post->created_at}}
                     </div>
                     <div class="mb-3">
-                        {{$post->content}}
+                        {{Str::limit($post->content,100)}}
                     </div>
                     <div class="mb-3">
                         最後更新時間:{{$post->updated_at}}

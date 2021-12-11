@@ -6,7 +6,17 @@
 
 @section('main')
 <div class="container">
+
     <div class="row justify-content-center">
+        <div class="mx-auto col-xl-8 col-sm-10">
+        @if($errors -> any())
+            @foreach ($errors->all() as $e)
+            <div class="alert alert-danger" role="alert">
+                {{$e}}
+            </div>
+            @endforeach
+        @endif
+        </div>
         <div class="mx-auto col-xl-8 col-sm-10">
             <h2>新增文章</h2>
             <hr>
@@ -23,9 +33,10 @@
                     <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
                 </div>
                 <input type="submit" class="btn btn-primary" value="新增文章">
-                <input type="button" class="btn btn-danger" value="取消" onclick="history.back()">
+                <input type="button" class="btn btn-danger" value="取消" onclick="location.href='{{route('post.index')}}'">
             </form>
         </div>
     </div>
 </div>
+
 @endsection

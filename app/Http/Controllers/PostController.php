@@ -25,6 +25,12 @@ class PostController extends Controller
         //     now(),
         //     now()
         // ]);
+
+        $request->validate([
+            'title' => 'required',
+            'content'=> 'required'
+        ]);
+
         DB::table('posts')->insert([
             'title'     => $request->title,
             'content'   => $request->content,
