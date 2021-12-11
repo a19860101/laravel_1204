@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>文章列表</h1>
+    {{-- <a href="/post/create">新增文章</a> --}}
+    <a href="{{route('post.create')}}">新增文章</a>
     @foreach($posts as $post)
     <div>
         {{$post->title}}
@@ -18,7 +20,7 @@
     <div>
         {{$post->created_at}}
     </div>
-    <a href="/post/{{$post->id}}">繼續閱讀</a>
+    <a href="{{route('post.show',['id'=>$post->id])}}">繼續閱讀</a>
     <hr>
     @endforeach
 </body>

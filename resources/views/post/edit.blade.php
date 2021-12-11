@@ -10,11 +10,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-7">
-                <h2>新增文章</h2>
+                <h2>編輯文章</h2>
                 <hr>
             </div>
             <div class="col-7">
-                <form action="/post/{{$post->id}}" method="post">
+                <form action="{{route('post.update',['id'=>$post->id])}}" method="post">
                     @csrf
                     @method('put')
                     <div class="mb-3">

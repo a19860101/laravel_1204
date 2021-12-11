@@ -15,7 +15,7 @@
                 <hr>
             </div>
             <div class="col-7">
-                <form action="/post" method="post">
+                <form action="{{route('post.store')}}" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="" class="form-label">文章標題</label>

@@ -12,12 +12,12 @@
     <div>
         {{$post->content}}
     </div>
-    <a href="/post">文章列表</a>
-    <a href="/post/{{$post->id}}/edit">編輯文章</a>
-    <form action="/post/{{$post->id}}" method="post">
+    <a href="{{route('post.index')}}">文章列表</a>
+    <a href="{{route('post.edit',['id'=>$post->id])}}">編輯文章</a>
+    <form action="{{route('post.destroy',['id'=>$post->id])}}" method="post">
         @csrf
         @method('delete')
-        <input type="submit" value="刪除">
+        <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
     </form>
     {{-- @endforeach --}}
 </body>
