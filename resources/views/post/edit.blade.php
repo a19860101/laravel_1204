@@ -14,8 +14,9 @@
                 <hr>
             </div>
             <div class="col-7">
-                <form action="" method="post">
+                <form action="/post/{{$post->id}}" method="post">
                     @csrf
+                    @method('put')
                     <div class="mb-3">
                         <label for="" class="form-label">文章標題</label>
                         <input type="text" class="form-control" name="title" value="{{$post->title}}">
