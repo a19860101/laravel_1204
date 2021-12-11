@@ -7,19 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>文章列表</h1>
-    @foreach($posts as $post)
-    <div>
-        {{$post->title}}
-    </div>
+    {{-- @foreach($posts as $post) --}}
+    <h1>{{$post->title}}</h1>
     <div>
         {{$post->content}}
     </div>
-    <div>
-        {{$post->created_at}}
-    </div>
-    <a href="/post/{{$post->id}}">繼續閱讀</a>
-    <hr>
-    @endforeach
+    <a href="/post">文章列表</a>
+    <a href="/post/{{$post->id}}/edit">編輯文章</a>
+    {{-- @endforeach --}}
 </body>
 </html>

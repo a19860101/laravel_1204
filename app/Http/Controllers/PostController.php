@@ -9,7 +9,11 @@ class PostController extends Controller
 {
     //
     function index(){
-        return view('post.index');
+        // $posts = DB::select('SELECT * FROM posts');
+        $posts = DB::table('posts')->orderBy('id','DESC')->get();
+        // return view('post.index',['posts'=>$posts]);
+        // return view('post.index')->with(['posts'=>$posts]);
+        return view('post.index',compact('posts'));
     }
     function create(){
         return view('post.create');
@@ -27,5 +31,15 @@ class PostController extends Controller
             'created_at'=> now(),
             'updated_at'=> now()
         ]);
+    }
+    function show($id){
+        // $posts = DB::select('SELECT * FROM posts WHERE id ='.$id);
+        // $post = DB::table('posts')->where('id',$id)->first();
+        $post = DB::table('posts')->find($id);
+        return view('post.show',compact('post'));
+    }
+    function edit($id){
+        $post = DB::table('posts')->find($id);
+        return view('post.edit',compact('post'));
     }
 }
