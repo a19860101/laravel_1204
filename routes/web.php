@@ -24,3 +24,12 @@ Route::get('/post/{id}','PostController@show')->name('post.show');
 Route::get('/post/{id}/edit','PostController@edit')->name('post.edit');
 Route::put('/post/{id}','PostController@update')->name('post.update');
 Route::delete('/post/{id}','PostController@destroy')->name('post.destroy');
+
+/*
+    建立controller並設定成resource
+    建立model
+    建立migration
+
+*/
+// Route::get('/category','CategoryController@index');
+Route::resource('/category','CategoryController');
