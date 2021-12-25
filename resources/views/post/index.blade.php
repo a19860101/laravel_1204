@@ -18,7 +18,12 @@ QWERTY
                         建立時間:{{$post->created_at}}
                     </div>
                     <div>
-                        分類: <span class="badge bg-secondary">{{$post->category->title}}</span>
+                        分類:
+                        <span class="badge bg-secondary">
+                            <a href="{{route('post.category',['category'=>$post->category_id])}}" class="text-white">
+                                {{$post->category->title}}
+                            </a>
+                        </span>
                     </div>
                     <div class="mb-3">
                         {{Str::limit($post->content,100)}}
