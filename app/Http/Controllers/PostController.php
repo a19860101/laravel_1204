@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Category;
 
 class PostController extends Controller
 {
@@ -16,7 +17,10 @@ class PostController extends Controller
         return view('post.index',compact('posts'));
     }
     function create(){
-        return view('post.create');
+        $categories = Category::get();
+        // $categories = \App\Category::get();
+        // return $categories;
+        return view('post.create',compact('categories'));
     }
     function store(Request $request){
         // DB::insert('INSERT INTO posts(title,content,created_at,updated_at)VALUES(?,?,?,?)',[

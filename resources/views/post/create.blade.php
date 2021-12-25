@@ -31,9 +31,9 @@
                 <div class="mb-3">
                     <label for="" class="form-label">分類</label>
                     <select name="category_id" id="" class="form-select">
-                        <option value="">test</option>
-                        <option value="">test2</option>
-                        <option value="">test3</option>
+                    @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->title}}</option>
+                    @endforeach
                     </select>
                 </div>
                 <div class="mb-3">
