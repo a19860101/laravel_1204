@@ -14,12 +14,16 @@
                         @endforeach
                     </ul>
                 </li>
+                @auth
                 <li class="nav-item">
                     <a class="nav-link active" href="{{route('post.create')}}">新增文章</a>
                 </li>
+                @if(Auth::user()->role == 0)
                 <li class="nav-item">
                     <a class="nav-link active" href="{{route('category.index')}}">分類管理</a>
                 </li>
+                @endif
+                @endauth
             </ul>
              <!-- Right Side Of Navbar -->
              <ul class="navbar-nav ms-auto">
