@@ -39,3 +39,9 @@ Route::resource('/category','CategoryController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//自訂登出
+Route::post('/logout/success',function(){
+    Auth::logout();
+    return view('auth.logout');
+})->name('logout.success');
