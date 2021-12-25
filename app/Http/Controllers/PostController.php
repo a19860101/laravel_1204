@@ -57,7 +57,8 @@ class PostController extends Controller
     function show($id){
         // $posts = DB::select('SELECT * FROM posts WHERE id ='.$id);
         // $post = DB::table('posts')->where('id',$id)->first();
-        $post = DB::table('posts')->find($id);
+        // $post = DB::table('posts')->find($id);
+        $post = Post::findOrFail($id);
         return view('post.show',compact('post'));
     }
     function edit($id){

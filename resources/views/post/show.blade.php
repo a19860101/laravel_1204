@@ -9,6 +9,15 @@
     <div class="row">
         <div class="mx-auto col-xl-8 col-sm-10 p-3">
             <h3>{{$post->title}}</h3>
+            <div>作者:{{$post->user->name}}</div>
+            <div>
+                分類:
+                <span class="badge bg-secondary">
+                    <a href="{{route('post.category',['category'=>$post->category_id])}}" class="text-white">
+                        {{$post->category->title}}
+                    </a>
+                </span>
+            </div>
             <hr>
             <div class="mb-3">
                 建立時間:{{$post->created_at}}
