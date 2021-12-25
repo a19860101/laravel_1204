@@ -27,18 +27,17 @@ class PostController extends Controller
         return view('post.create',compact('categories'));
     }
     function store(Request $request){
+
+        // return $request->file('cover');
+        // return $request->file('cover')->store('test','public');
+        // return $request->file('cover')->storeAs('test','qqq.jpg','public');
+        return $request->file('cover')->storeAs('test','123.jpg');
         // DB::insert('INSERT INTO posts(title,content,created_at,updated_at)VALUES(?,?,?,?)',[
         //     $request->title,
         //     $request->content,
         //     now(),
         //     now()
         // ]);
-
-        $request->validate([
-            'title' => 'required',
-            'content'=> 'required'
-        ]);
-
         // DB::table('posts')->insert([
         //     'title'     => $request->title,
         //     'content'   => $request->content,
@@ -46,6 +45,13 @@ class PostController extends Controller
         //     'created_at'=> now(),
         //     'updated_at'=> now()
         // ]);
+
+        $request->validate([
+            'title' => 'required',
+            'content'=> 'required'
+        ]);
+
+
         $post = new Post;
         $post->fill($request->all());
         $post->category_id = $request->category_id;
