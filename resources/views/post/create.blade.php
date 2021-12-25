@@ -29,6 +29,14 @@
                     <input type="text" class="form-control" name="title">
                 </div>
                 <div class="mb-3">
+                    <label for="" class="form-label">分類</label>
+                    <select name="category_id" id="" class="form-select">
+                        <option value="">test</option>
+                        <option value="">test2</option>
+                        <option value="">test3</option>
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">文章內文</label>
                     <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
                 </div>
