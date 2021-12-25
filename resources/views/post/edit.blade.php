@@ -20,6 +20,17 @@
                         <input type="text" class="form-control" name="title" value="{{$post->title}}">
                     </div>
                     <div class="mb-3">
+                        <label for="" class="form-label">分類</label>
+                        <select name="category_id" id="" class="form-select">
+                        @foreach ($categories as $category)
+                            <option
+                                value="{{$category->id}}"
+                                {{ $category->id == $post->category_id ? 'selected':'' }}
+                                >{{$category->title}}</option>
+                        @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label for="" class="form-label">文章內文</label>
                         <textarea name="content" id="" cols="30" rows="10" class="form-control">{{$post->content}}</textarea>
                     </div>

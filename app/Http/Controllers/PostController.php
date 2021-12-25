@@ -55,8 +55,10 @@ class PostController extends Controller
         return view('post.show',compact('post'));
     }
     function edit($id){
-        $post = DB::table('posts')->find($id);
-        return view('post.edit',compact('post'));
+        // $post = DB::table('posts')->find($id);
+        $post = Post::find($id);
+        $categories = Category::get();
+        return view('post.edit',compact('post','categories'));
     }
     function update(Request $request, $id){
         // DB::update('UPDATE posts SET title=?,content=?,updated_at=? WHERE id = ?' ,[
