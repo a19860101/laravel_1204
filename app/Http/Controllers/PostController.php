@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Category;
 use App\Post;
 
@@ -37,13 +38,18 @@ class PostController extends Controller
             'content'=> 'required'
         ]);
 
-        DB::table('posts')->insert([
-            'title'     => $request->title,
-            'content'   => $request->content,
-            'category_id'=>$request->category_id,
-            'created_at'=> now(),
-            'updated_at'=> now()
-        ]);
+        // DB::table('posts')->insert([
+        //     'title'     => $request->title,
+        //     'content'   => $request->content,
+        //     'category_id'=>$request->category_id,
+        //     'created_at'=> now(),
+        //     'updated_at'=> now()
+        // ]);
+        $post = new Post;
+        $post->fill($request->all());
+        $post->category_id = $request->category_id;
+        $post->user_id = Auth::id();
+        $post->save();
 
         return redirect('post');
 

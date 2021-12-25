@@ -9,6 +9,8 @@ QWERTY
         <div class="row">
             <div class="mx-auto col-xl-8 col-sm-10 ">
                 <h2>文章列表</h2>
+                <div>{{Auth::id()}}</div>
+                <div>{{Auth::user()->name}}</div>
             </div>
             @foreach($posts as $post)
             <div class="mx-auto col-xl-8 col-sm-10 p-3">
