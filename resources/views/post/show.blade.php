@@ -32,12 +32,14 @@
             </div>
             <hr>
             <a href="{{route('post.index')}}" class="btn btn-success ban-sm">文章列表</a>
+            @if($post->user_id == Auth::id())
             <a href="{{route('post.edit',['id'=>$post->id])}}" class="btn btn-primary ban-sm">編輯文章</a>
             <form action="{{route('post.destroy',['id'=>$post->id])}}" method="post" class="d-inline-block">
                 @csrf
                 @method('delete')
                 <input type="submit" value="刪除" onclick="return confirm('確認刪除？')" class="btn btn-danger ban-sm">
             </form>
+            @endif
         </div>
     </div>
 </div>
