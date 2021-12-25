@@ -83,6 +83,8 @@ class PostController extends Controller
         return redirect('post');
     }
     function postWithCategory(Category $category){
-        return $category;
+        $posts = Post::where('category_id',$category->id)->orderBy('updated_at','DESC')->get();
+        // return $category;
+        return view('post.postCategory',compact('posts','category'));
     }
 }
