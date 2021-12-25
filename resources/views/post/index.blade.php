@@ -17,6 +17,9 @@ QWERTY
                     <div class="mb-3">
                         建立時間:{{$post->created_at}}
                     </div>
+                    <div>
+                        分類: <span class="badge bg-secondary">{{$post->category->title}}</span>
+                    </div>
                     <div class="mb-3">
                         {{Str::limit($post->content,100)}}
                     </div>

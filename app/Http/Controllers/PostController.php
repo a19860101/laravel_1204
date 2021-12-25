@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Category;
+use App\Post;
 
 class PostController extends Controller
 {
     //
     function index(){
         // $posts = DB::select('SELECT * FROM posts');
-        $posts = DB::table('posts')->orderBy('id','DESC')->get();
+        // $posts = DB::table('posts')->orderBy('id','DESC')->get();
+        $posts = Post::orderBy('id','DESC')->get();
         // return view('post.index',['posts'=>$posts]);
         // return view('post.index')->with(['posts'=>$posts]);
         return view('post.index',compact('posts'));
