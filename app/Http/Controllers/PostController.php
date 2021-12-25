@@ -38,6 +38,7 @@ class PostController extends Controller
         DB::table('posts')->insert([
             'title'     => $request->title,
             'content'   => $request->content,
+            'category_id'=>$request->category_id,
             'created_at'=> now(),
             'updated_at'=> now()
         ]);
