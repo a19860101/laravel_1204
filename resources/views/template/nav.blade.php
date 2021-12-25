@@ -6,8 +6,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="{{route('post.index')}}">文章列表</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="{{route('post.index')}}">文章列表</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="dropdown-item">test</a></li>
+                        <li><a href="#" class="dropdown-item">test</a></li>
+                        <li><a href="#" class="dropdown-item">test</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="{{route('post.create')}}">新增文章</a>

@@ -16,7 +16,8 @@ class PostController extends Controller
         $posts = Post::orderBy('id','DESC')->get();
         // return view('post.index',['posts'=>$posts]);
         // return view('post.index')->with(['posts'=>$posts]);
-        return view('post.index',compact('posts'));
+        $categories = Category::get();
+        return view('post.index',compact('posts','categories'));
     }
     function create(){
         $categories = Category::get();
