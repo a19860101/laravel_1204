@@ -9,13 +9,14 @@ QWERTY
         <div class="row">
             <div class="mx-auto col-xl-8 col-sm-10 ">
                 <h2>文章列表</h2>
-                <div>{{Auth::id()}}</div>
-                <div>{{Auth::user()->name}}</div>
             </div>
             @foreach($posts as $post)
             <div class="mx-auto col-xl-8 col-sm-10 p-3">
                 <div class="border p-3 rounded shadow-sm">
                     <h3>{{$post->title}}</h3>
+                    <div>
+                        作者:{{$post->user->name}}
+                    </div>
                     <div class="mb-3">
                         建立時間:{{$post->created_at}}
                     </div>
