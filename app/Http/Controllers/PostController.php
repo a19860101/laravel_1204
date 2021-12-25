@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Category;
 use App\Post;
+use App\User;
 
 class PostController extends Controller
 {
@@ -93,5 +94,9 @@ class PostController extends Controller
         $posts = Post::where('category_id',$category->id)->orderBy('updated_at','DESC')->get();
         // return $category;
         return view('post.postCategory',compact('posts','category'));
+    }
+    function postWithUser(User $user){
+        $posts = Post::where('user_id',$user->id)->orderBy('updated_at','DESC')->get();
+        return view('post.postUser',compact('posts','user'));
     }
 }

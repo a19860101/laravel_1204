@@ -8,28 +8,18 @@ QWERTY
     <div class="container">
         <div class="row">
             <div class="mx-auto col-xl-8 col-sm-10 ">
-                <h2>文章列表</h2>
+                <h2>'{{$user->name}}'的所有文章</h2>
             </div>
+
             @foreach($posts as $post)
             <div class="mx-auto col-xl-8 col-sm-10 p-3">
                 <div class="border p-3 rounded shadow-sm">
                     <h3>{{$post->title}}</h3>
-                    <div>
-                        作者:
-                        <a href="{{route('post.user',['user'=>$post->user->id])}}">
-                            {{$post->user->name}}
-                        </a>
-                    </div>
                     <div class="mb-3">
                         建立時間:{{$post->created_at}}
                     </div>
                     <div>
-                        分類:
-                        <span class="badge bg-secondary">
-                            <a href="{{route('post.category',['category'=>$post->category_id])}}" class="text-white">
-                                {{$post->category->title}}
-                            </a>
-                        </span>
+                        分類: <span class="badge bg-secondary">{{$post->category->title}}</span>
                     </div>
                     <div class="mb-3">
                         {{Str::limit($post->content,100)}}
