@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="{{route('post.index')}}">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -9,9 +9,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="{{route('post.index')}}">文章列表</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#" class="dropdown-item">test</a></li>
-                        <li><a href="#" class="dropdown-item">test</a></li>
-                        <li><a href="#" class="dropdown-item">test</a></li>
+                        @foreach ($categories as $category)
+                        <li><a href="{{route('post.category',['category'=>$category->id])}}" class="dropdown-item">{{$category->title}}</a></li>
+                        @endforeach
                     </ul>
                 </li>
                 <li class="nav-item">
