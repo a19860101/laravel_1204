@@ -12,7 +12,7 @@
                 <hr>
             </div>
             <div class="mx-auto col-xl-8 col-sm-10">
-                <form action="{{route('post.update',['id'=>$post->id])}}" method="post">
+                <form action="{{route('post.update',['post'=>$post->id])}}" method="post">
                     @csrf
                     @method('put')
                     <div class="mb-3">

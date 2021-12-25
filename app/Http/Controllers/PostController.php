@@ -60,19 +60,21 @@ class PostController extends Controller
         $categories = Category::get();
         return view('post.edit',compact('post','categories'));
     }
-    function update(Request $request, $id){
+    function update(Post $post,Request $request){
         // DB::update('UPDATE posts SET title=?,content=?,updated_at=? WHERE id = ?' ,[
         //     $request->title,
         //     $request->content,
         //     now(),
         //     $id
         // ]);
-        DB::table('posts')->where('id',$id)->update([
-            'title'     => $request->title,
-            'content'   => $request->content,
-            'updated_at'=>now()
-        ]);
-
+        // DB::table('posts')->where('id',$id)->update([
+        //     'title'     => $request->title,
+        //     'content'   => $request->content,
+        //     'updated_at'=>now()
+        // ]);
+        $post->fill($request->all());
+        $post->category_id = $request->category_id;
+        $post->save();
         return redirect('post');
     }
     function destroy($id){
