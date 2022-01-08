@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use App\Category;
 use App\Post;
 use App\User;
+use App\Tag;
 
 class PostController extends Controller
 {
@@ -28,6 +29,12 @@ class PostController extends Controller
         return view('post.create',compact('categories'));
     }
     function store(Request $request){
+
+        $tags = explode(',',$request->tag);
+        foreach($tags as $tag){
+            Tag::create(['title' => $tag]);
+        }
+        return;
 
         // return $request->file('cover');
         // return $request->file('cover')->store('test','public');
