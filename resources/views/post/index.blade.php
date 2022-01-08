@@ -15,7 +15,7 @@ QWERTY
                 <div class="border p-3 rounded shadow-sm">
                     <h3>{{$post->title}}</h3>
                     @if($post->cover != null)
-                    <img src="{{asset('storage/images/'.$post->cover)}}" class="w-100">
+                    <img src="{{asset('images/'.$post->cover)}}" class="w-100">
                     @endif
                     <div>
                         作者:
