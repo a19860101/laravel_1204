@@ -41,6 +41,10 @@
                     </select>
                 </div>
                 <div class="mb-3">
+                    <label for="" class="form-label">標籤</label>
+                    <input type="text" name="tag" id="tag" class="form-control">
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">文章內文</label>
                     <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
                 </div>
