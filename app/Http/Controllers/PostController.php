@@ -37,7 +37,7 @@ class PostController extends Controller
             $ext = $request->file('cover')->getClientOriginalExtension();
             $cover = Str::uuid().'.'.$ext;
             $request->file('cover')->storeAs('images',$cover,'public');
-            return;
+            // return;
         }
         // DB::insert('INSERT INTO posts(title,content,created_at,updated_at)VALUES(?,?,?,?)',[
         //     $request->title,
@@ -62,6 +62,7 @@ class PostController extends Controller
         $post = new Post;
         $post->fill($request->all());
         $post->category_id = $request->category_id;
+        $post->cover = $cover;
         $post->user_id = Auth::id();
         $post->save();
 
