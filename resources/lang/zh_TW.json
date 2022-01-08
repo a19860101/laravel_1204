@@ -6,5 +6,11 @@
     "Confirm Password": "確認密碼",
     "Login": "登入",
     "Remember Me": "記住我",
-    "Forgot Your Password?": "忘記密碼"
+    "Forgot Your Password?": "忘記密碼",
+    "All Posts": "文章列表",
+    "Author":"作者",
+    "Create Time":"建立時間",
+    "Category":"分類",
+    "Tag":"標籤",
+    "Last Update":"最後更新時間"
 }

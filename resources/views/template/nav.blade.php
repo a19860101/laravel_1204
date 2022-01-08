@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="{{route('post.index')}}">文章列表</a>
+                    <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="{{route('post.index')}}">{{__('All Posts')}}</a>
                     <ul class="dropdown-menu">
                         @foreach ($categories as $category)
                         <li><a href="{{route('post.category',['category'=>$category->id])}}" class="dropdown-item">{{$category->title}}</a></li>
