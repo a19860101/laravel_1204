@@ -34,6 +34,16 @@ QWERTY
                             </a>
                         </span>
                     </div>
+                    <div>
+                        標籤:
+                        @foreach($post->tags as $tag)
+                        <span class="badge bg-warning">
+                            <a href="" class="text-white">
+                                {{$tag->title}}
+                            </a>
+                        </span>
+                        @endforeach
+                    </div>
                     <div class="mb-3">
                         {{Str::limit($post->content,100)}}
                     </div>
