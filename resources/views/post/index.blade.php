@@ -14,6 +14,9 @@ QWERTY
             <div class="mx-auto col-xl-8 col-sm-10 p-3">
                 <div class="border p-3 rounded shadow-sm">
                     <h3>{{$post->title}}</h3>
+                    @if($post->cover != null)
+                    <img src="{{asset('storage/images/'.$post->cover)}}" class="w-100">
+                    @endif
                     <div>
                         作者:
                         <a href="{{route('post.user',['user'=>$post->user->id])}}">
