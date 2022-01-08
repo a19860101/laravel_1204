@@ -30,6 +30,17 @@
                         @endforeach
                         </select>
                     </div>
+                    @php
+                        $tagArray = [];
+                        foreach($post->tags as $tag){
+                            $tagArray[] = $tag->title;
+                        }
+                        $tagString = implode(',',$tagArray);
+                    @endphp
+                    <div class="mb-3">
+                        <label for="" class="form-label">標籤</label>
+                        <input type="text" name="tag" id="tag" class="form-control" value="{{$tagString}}">
+                    </div>
                     <div class="mb-3">
                         <label for="" class="form-label">文章內文</label>
                         <textarea name="content" id="" cols="30" rows="10" class="form-control">{{$post->content}}</textarea>
