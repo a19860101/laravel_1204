@@ -27,6 +27,8 @@ Route::delete('/post/{id}','PostController@destroy')->name('post.destroy')->midd
 Route::get('/post/category/{category}','PostController@postWithCategory')->name('post.category');
 Route::get('/post/user/{user}','PostController@postWithUser')->name('post.user');
 
+Route::post('/upload','PostController@upload');
+
 /*
     建立controller並設定成resource
     建立model

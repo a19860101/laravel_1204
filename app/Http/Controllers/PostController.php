@@ -134,4 +134,11 @@ class PostController extends Controller
         $posts = Post::where('user_id',$user->id)->orderBy('updated_at','DESC')->get();
         return view('post.postUser',compact('posts','user'));
     }
+    function upload(){
+        $ext = $request->file('cover')->getClientOriginalExtension();
+        $img = Str::uuid().'.'.$ext;
+        $request->file('cover')->storeAs('images',$img,'public');
+
+        return response()->json(['location' => '/images/'.$img]);
+    }
 }

@@ -13,6 +13,7 @@
         /* enable automatic uploads of images represented by blob or data URIs*/
         automatic_uploads: true,
         file_picker_types: 'image',
+        images_upload_url: '/upload',
         /* and here's our custom image picker*/
         file_picker_callback: function (cb, value, meta) {
             var input = document.createElement('input');
