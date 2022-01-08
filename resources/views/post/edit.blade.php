@@ -43,7 +43,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">文章內文</label>
-                        <textarea name="content" id="" cols="30" rows="10" class="form-control">{{$post->content}}</textarea>
+                        <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{$post->content}}</textarea>
                     </div>
                     <input type="submit" class="btn btn-primary" value="儲存文章">
                     <input type="button" class="btn btn-danger" value="取消" onclick="history.back()">
@@ -52,4 +52,5 @@
             </div>
         </div>
     </div>
+    @include('template.tinymce')
 @endsection

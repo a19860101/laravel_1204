@@ -41,6 +41,8 @@ class PostController extends Controller
             $cover = Str::uuid().'.'.$ext;
             $request->file('cover')->storeAs('images',$cover,'public');
             // return;
+        }else{
+            $cover = null;
         }
         // DB::insert('INSERT INTO posts(title,content,created_at,updated_at)VALUES(?,?,?,?)',[
         //     $request->title,

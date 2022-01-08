@@ -45,7 +45,7 @@ QWERTY
                         @endforeach
                     </div>
                     <div class="mb-3">
-                        {{Str::limit($post->content,100)}}
+                        {{Str::limit(strip_tags($post->content),100)}}
                     </div>
                     <div class="mb-3">
                         最後更新時間:{{$post->updated_at}}

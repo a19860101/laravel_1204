@@ -24,7 +24,7 @@
             </div>
             <hr>
             <div class="mb-3">
-                {{$post->content}}
+                {!! $post->content !!}
             </div>
             <hr>
             <div class="mb-3">
