@@ -46,7 +46,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">文章內文</label>
-                    <textarea name="content" id="" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
                 </div>
                 <input type="submit" class="btn btn-primary" value="新增文章">
                 <input type="button" class="btn btn-danger" value="取消" onclick="location.href='{{route('post.index')}}'">
@@ -55,4 +55,14 @@
     </div>
 </div>
 
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: '#content',
+        height:600,
+        language:'zh_TW'
+    });
+</script>
+
 @endsection
+
