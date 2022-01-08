@@ -2,5 +2,9 @@
     "Register":"註冊",
     "Name":"姓名",
     "E-Mail Address": "電子信箱",
-    "Password": "密碼"
+    "Password": "密碼",
+    "Confirm Password": "確認密碼",
+    "Login": "登入",
+    "Remember Me": "記住我",
+    "Forgot Your Password?": "忘記密碼"
 }
