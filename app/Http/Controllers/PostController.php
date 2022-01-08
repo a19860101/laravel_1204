@@ -30,11 +30,7 @@ class PostController extends Controller
     }
     function store(Request $request){
 
-        $tags = explode(',',$request->tag);
-        foreach($tags as $tag){
-            Tag::create(['title' => $tag]);
-        }
-        return;
+
 
         // return $request->file('cover');
         // return $request->file('cover')->store('test','public');
@@ -72,6 +68,13 @@ class PostController extends Controller
         $post->cover = $cover;
         $post->user_id = Auth::id();
         $post->save();
+
+        // 標籤
+        $tags = explode(',',$request->tag);
+        foreach($tags as $tag){
+            $tagModel = Tag::firstOrCreate(['title' => $tag]);
+            $post->tags()->attach($tagModel->id);
+        }
 
         return redirect('post');
 
