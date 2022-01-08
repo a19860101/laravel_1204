@@ -135,9 +135,9 @@ class PostController extends Controller
         return view('post.postUser',compact('posts','user'));
     }
     function upload(){
-        $ext = $request->file('cover')->getClientOriginalExtension();
+        $ext = request()->file('file')->getClientOriginalExtension();
         $img = Str::uuid().'.'.$ext;
-        $request->file('cover')->storeAs('images',$img,'public');
+        request()->file('file')->storeAs('images',$img,'public');
 
         return response()->json(['location' => '/images/'.$img]);
     }
