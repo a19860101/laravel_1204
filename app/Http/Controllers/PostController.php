@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use App\Category;
 use App\Post;
 use App\User;
@@ -31,7 +32,13 @@ class PostController extends Controller
         // return $request->file('cover');
         // return $request->file('cover')->store('test','public');
         // return $request->file('cover')->storeAs('test','qqq.jpg','public');
-        return $request->file('cover')->storeAs('test','123.jpg');
+        // return $request->file('cover')->storeAs('test','123.jpg');
+        if($request->file('cover')){
+            $ext = $request->file('cover')->getClientOriginalExtension();
+            $cover = Str::uuid().'.'.$ext;
+            $request->file('cover')->storeAs('images',$cover,'public');
+            return;
+        }
         // DB::insert('INSERT INTO posts(title,content,created_at,updated_at)VALUES(?,?,?,?)',[
         //     $request->title,
         //     $request->content,
