@@ -107,6 +107,15 @@ class PostController extends Controller
         $post->fill($request->all());
         $post->category_id = $request->category_id;
         $post->save();
+
+         // 標籤
+         $post->tags()->detach();
+         $tags = explode(',',$request->tag);
+         foreach($tags as $tag){
+             $tagModel = Tag::firstOrCreate(['title' => $tag]);
+             $post->tags()->attach($tagModel->id);
+         }
+
         return redirect('post');
     }
     function destroy($id){
